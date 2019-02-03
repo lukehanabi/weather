@@ -15,9 +15,8 @@ WeatherData: Data to be replied.
     private double nightAverage;
     private double pressureAvg;
 
-///
 
-One end point
+# Endpoint
 ```
 GET /data/temperature/{city}/{country}/next/{days}/average
 ```
@@ -32,14 +31,18 @@ nightTimeAvg: 10.2,
 pressureAvg: 12321.2
 }
 ```
+
+HTTP Codes:
+```
 OK: 200
 Created: 201
 Validation: 412
 Created: 201
 429 Too Many Requests
 500 when 400 error is returned. {"cod":401, "message": "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info."}
+```
 
-Days were added for future implementation. Not used.
+Variable Days were added for future implementation. Not used.
 
 # Solution
 
@@ -93,7 +96,7 @@ One for daytime, nighttime and presurre filtering with java8 streams:
 4/ get avg pressure
 ```
 
-## Date coneversions:
+## Date conversions:
 ```
 LocalDateTime dateTime = LocalDateTime.parse("2018-05-05T11:50:55");
 
